@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # URLs dos arquivos no GitHub (substitua com seus URLs reais)
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/{seu_usuario}/{seu_repo}/main/"
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/Analissoares/meu-mapa-streamlit/refs/heads/main"
 SHAPEFILE_URL = GITHUB_RAW_URL + "dados/coromandel_limite.shp"
 RASTER_URL = GITHUB_RAW_URL + "dados/fluxo_acumulado.tif"
 PNG_URL = GITHUB_RAW_URL + "dados/fluxo_acumulado_com_limite.png"
