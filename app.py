@@ -48,11 +48,13 @@ try:
     cmap = colormaps[colormap_name]
     rgba_img = (cmap(acc_norm) * 255).astype(np.uint8)
 
-    # --- Converte para PIL e salva em memória ---
+    # --- Converte a imagem de numpy para PIL ---
     rgba_img_pil = Image.fromarray(rgba_img)
+
+    # Salva a imagem em um buffer de memória
     img_buf = BytesIO()
     rgba_img_pil.save(img_buf, format='PNG')
-    img_buf.seek(0)
+    img_buf.seek(0)  # Retorna ao início do buffer
 
     # --- Coordenadas do raster ---
     image_bounds = [[bounds.bottom, bounds.left], [bounds.top, bounds.right]]
