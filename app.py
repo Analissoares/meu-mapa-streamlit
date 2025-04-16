@@ -107,3 +107,5 @@ try:
 except Exception as e:
     st.error(f"Erro ao gerar o mapa: {str(e)}")
     st.exception(e)
+
+
