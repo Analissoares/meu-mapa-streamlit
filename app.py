@@ -1,12 +1,12 @@
+from PIL import Image
+import numpy as np
 import streamlit as st
 import geopandas as gpd
 import rasterio
 from contextlib import closing
 import folium
-import numpy as np
 from folium.raster_layers import ImageOverlay
 from streamlit_folium import st_folium
-from matplotlib import pyplot as plt
 from matplotlib import colormaps
 from io import BytesIO
 
@@ -30,7 +30,6 @@ try:
         transform = src.transform
 
     # --- Processamento do raster ---
-    # Substitui valores negativos/infinitos por NaN
     acc = np.where(acc < 0, np.nan, acc)
     acc_log = np.log1p(acc)
     
@@ -49,9 +48,10 @@ try:
     cmap = colormaps[colormap_name]
     rgba_img = (cmap(acc_norm) * 255).astype(np.uint8)
 
-    # --- Salva imagem em memória ---
+    # --- Converte para PIL e salva em memória ---
+    rgba_img_pil = Image.fromarray(rgba_img)
     img_buf = BytesIO()
-    plt.imsave(img_buf, rgba_img, format='png')
+    rgba_img_pil.save(img_buf, format='PNG')
     img_buf.seek(0)
 
     # --- Coordenadas do raster ---
