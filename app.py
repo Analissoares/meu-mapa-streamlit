@@ -5,8 +5,8 @@ st.set_page_config(page_title="Mapa de Acumulação de Fluxo", layout="wide")
 st.title("🗺️ Mapa de Acumulação de Fluxo com Delimitação")
 st.markdown("Método D8 - WhiteboxTools")
 
-# Caminho para a imagem gerada previamente
-output_path = "dados/fluxo_acumulado_com_limite.png"
+# Caminho atualizado da imagem
+output_path = "fluxo_acumulado_com_limite.png"
 
 try:
     st.subheader("🖼️ Exibindo imagem gerada")
