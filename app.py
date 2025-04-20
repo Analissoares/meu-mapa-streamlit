@@ -13,7 +13,7 @@ st.set_page_config(
     page_icon="🌍"
 )
 
-# URLs do GitHub (corrigido)
+# URLs do GitHub 
 BASE_GITHUB_URL = "https://github.com/Analissoares/meu-mapa-streamlit/raw/main/"
 SHAPEFILE_URL = BASE_GITHUB_URL + "dados/coromandel_limite.shp"
 SHX_URL       = BASE_GITHUB_URL + "dados/coromandel_limite.shx"
